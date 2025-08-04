@@ -4,7 +4,7 @@
   "info": {
     "singularName": "about",
     "pluralName": "abouts",
-    "displayName": "About",
+    "displayName": "Home Screen Coupon ",
     "description": "Write about yourself and the content you create"
   },
   "options": {
@@ -12,12 +12,17 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "text1": {
       "type": "string"
     },
-    "blocks": {
-      "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+    "minumumCartValue": {
+      "type": "string"
+    },
+    "text2": {
+      "type": "string"
+    },
+    "couponCode": {
+      "type": "string"
     }
   }
 }
