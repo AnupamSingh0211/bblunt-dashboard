@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_pages",
+  "info": {
+    "displayName": "page",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "pageId": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
