@@ -402,37 +402,6 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiImageBannerImageBanner extends Struct.SingleTypeSchema {
-  collectionName: 'image_banners';
-  info: {
-    displayName: 'imageBanner';
-    pluralName: 'image-banners';
-    singularName: 'image-banner';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::image-banner.image-banner'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    type: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'imageBanner'>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    url: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
 export interface ApiOfferPagesOfferPages extends Struct.CollectionTypeSchema {
   collectionName: 'all_offer_pages';
   info: {
@@ -444,6 +413,7 @@ export interface ApiOfferPagesOfferPages extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    banners: Schema.Attribute.Component<'shared.image-banner', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -970,7 +940,6 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
-      'api::image-banner.image-banner': ApiImageBannerImageBanner;
       'api::offer-pages.offer-pages': ApiOfferPagesOfferPages;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

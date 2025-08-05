@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_image_banners",
+  "info": {
+    "displayName": "imageBanner",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "string",
+      "default": "imageBanner",
+      "required": true
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

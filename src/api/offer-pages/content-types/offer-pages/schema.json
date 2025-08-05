@@ -10,5 +10,11 @@
     "draftAndPublish": true
   },
   "pluginOptions": {},
-  "attributes": {}
+  "attributes": {
+    "banners": {
+      "type": "component",
+      "component": "shared.image-banner",
+      "repeatable": true
+    }
+  }
 }
