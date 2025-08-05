@@ -11,19 +11,14 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "banners": {
-      "type": "component",
-      "component": "shared.image-banner",
-      "repeatable": true
-    },
-    "collectionsInOffer": {
-      "type": "component",
-      "component": "shared.collection",
-      "repeatable": true
-    },
     "offerPageId": {
       "type": "string",
       "required": true
+    },
+    "item": {
+      "type": "component",
+      "component": "shared.page-item",
+      "repeatable": true
     }
   }
 }

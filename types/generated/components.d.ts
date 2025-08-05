@@ -40,12 +40,28 @@ export interface SharedImageBanner extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedPageItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_page_items';
+  info: {
+    displayName: 'PageItem';
+    icon: 'bulletList';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<
+      ['imageBanner', 'offerTimer', 'collection']
+    >;
+    url: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'shared.collection': SharedCollection;
       'shared.coupon-item': SharedCouponItem;
       'shared.image-banner': SharedImageBanner;
+      'shared.page-item': SharedPageItem;
     }
   }
 }
