@@ -424,6 +424,7 @@ export interface ApiOfferPagesOfferPages extends Struct.CollectionTypeSchema {
       'api::offer-pages.offer-pages'
     > &
       Schema.Attribute.Private;
+    offerPageId: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
