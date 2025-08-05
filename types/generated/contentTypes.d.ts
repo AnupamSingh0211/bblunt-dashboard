@@ -374,7 +374,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 }
 
 export interface ApiCheckoutOffersCheckoutOffers
-  extends Struct.CollectionTypeSchema {
+  extends Struct.SingleTypeSchema {
   collectionName: 'all_checkout_offers';
   info: {
     displayName: 'CheckoutOffers';

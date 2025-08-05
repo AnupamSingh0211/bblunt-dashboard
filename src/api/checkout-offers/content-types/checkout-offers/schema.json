@@ -1,5 +1,5 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "all_checkout_offers",
   "info": {
     "singularName": "checkout-offers",
