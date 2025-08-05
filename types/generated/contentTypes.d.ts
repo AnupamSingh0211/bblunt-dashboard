@@ -414,6 +414,7 @@ export interface ApiOfferPagesOfferPages extends Struct.CollectionTypeSchema {
   };
   attributes: {
     banners: Schema.Attribute.Component<'shared.image-banner', true>;
+    collectionsInOffer: Schema.Attribute.Component<'shared.collection', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
