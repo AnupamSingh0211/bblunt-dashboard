@@ -19,6 +19,7 @@ export interface SharedImageBanner extends Struct.ComponentSchema {
     icon: 'picture';
   };
   attributes: {
+    src: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     type: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'imageBanner'>;
