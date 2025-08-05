@@ -433,6 +433,33 @@ export interface ApiImageBannerImageBanner extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiOfferPagesOfferPages extends Struct.CollectionTypeSchema {
+  collectionName: 'all_offer_pages';
+  info: {
+    displayName: 'OfferPages';
+    pluralName: 'all-offer-pages';
+    singularName: 'offer-pages';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::offer-pages.offer-pages'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -944,6 +971,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
       'api::image-banner.image-banner': ApiImageBannerImageBanner;
+      'api::offer-pages.offer-pages': ApiOfferPagesOfferPages;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

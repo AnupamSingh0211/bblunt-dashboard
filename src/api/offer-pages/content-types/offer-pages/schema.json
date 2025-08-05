@@ -1,0 +1,14 @@
+{
+  "kind": "collectionType",
+  "collectionName": "all_offer_pages",
+  "info": {
+    "singularName": "offer-pages",
+    "pluralName": "all-offer-pages",
+    "displayName": "OfferPages"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {}
+}
