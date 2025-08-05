@@ -12,6 +12,19 @@ export interface SharedCollection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCouponItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_coupon_items';
+  info: {
+    displayName: 'CouponItem';
+    icon: 'crown';
+  };
+  attributes: {
+    body: Schema.Attribute.String & Schema.Attribute.Required;
+    code: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedImageBanner extends Struct.ComponentSchema {
   collectionName: 'components_shared_image_banners';
   info: {
@@ -19,7 +32,7 @@ export interface SharedImageBanner extends Struct.ComponentSchema {
     icon: 'picture';
   };
   attributes: {
-    src: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    src: Schema.Attribute.Media<'images' | 'files'>;
     type: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'imageBanner'>;
@@ -31,6 +44,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'shared.collection': SharedCollection;
+      'shared.coupon-item': SharedCouponItem;
       'shared.image-banner': SharedImageBanner;
     }
   }

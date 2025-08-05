@@ -373,6 +373,35 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCheckoutOffersCheckoutOffers
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'all_checkout_offers';
+  info: {
+    displayName: 'CheckoutOffers';
+    pluralName: 'all-checkout-offers';
+    singularName: 'checkout-offers';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    CouponItem: Schema.Attribute.Component<'shared.coupon-item', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::checkout-offers.checkout-offers'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomeScreenOfferHomeScreenOffer
   extends Struct.SingleTypeSchema {
   collectionName: 'home_screen_offers';
@@ -944,6 +973,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::checkout-offers.checkout-offers': ApiCheckoutOffersCheckoutOffers;
       'api::home-screen-offer.home-screen-offer': ApiHomeScreenOfferHomeScreenOffer;
       'api::offer-pages.offer-pages': ApiOfferPagesOfferPages;
       'plugin::content-releases.release': PluginContentReleasesRelease;
