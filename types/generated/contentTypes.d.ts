@@ -373,16 +373,16 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiAboutAbout extends Struct.SingleTypeSchema {
-  collectionName: 'abouts';
+export interface ApiHomeScreenOfferHomeScreenOffer
+  extends Struct.SingleTypeSchema {
+  collectionName: 'home_screen_offers';
   info: {
-    description: 'Write about yourself and the content you create';
-    displayName: 'Home Screen Coupon ';
-    pluralName: 'abouts';
-    singularName: 'about';
+    displayName: 'Home Screen Offer';
+    pluralName: 'home-screen-offers';
+    singularName: 'home-screen-offer';
   };
   options: {
-    draftAndPublish: false;
+    draftAndPublish: true;
   };
   attributes: {
     couponCode: Schema.Attribute.String;
@@ -390,9 +390,12 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-screen-offer.home-screen-offer'
+    > &
       Schema.Attribute.Private;
-    minumumCartValue: Schema.Attribute.String;
+    minimumCartValue: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     text1: Schema.Attribute.String;
     text2: Schema.Attribute.String;
@@ -941,7 +944,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::about.about': ApiAboutAbout;
+      'api::home-screen-offer.home-screen-offer': ApiHomeScreenOfferHomeScreenOffer;
       'api::offer-pages.offer-pages': ApiOfferPagesOfferPages;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

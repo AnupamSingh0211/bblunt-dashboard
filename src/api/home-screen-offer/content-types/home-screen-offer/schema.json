@@ -1,21 +1,20 @@
 {
   "kind": "singleType",
-  "collectionName": "abouts",
+  "collectionName": "home_screen_offers",
   "info": {
-    "singularName": "about",
-    "pluralName": "abouts",
-    "displayName": "Home Screen Coupon ",
-    "description": "Write about yourself and the content you create"
+    "singularName": "home-screen-offer",
+    "pluralName": "home-screen-offers",
+    "displayName": "Home Screen Offer"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
     "text1": {
       "type": "string"
     },
-    "minumumCartValue": {
+    "minimumCartValue": {
       "type": "string"
     },
     "text2": {
